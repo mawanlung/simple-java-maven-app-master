@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn -B -DskipTests clean package'
+                sh 'mvn -Dmaven.repo.local=/Users/macos/.m2/repository/ -DskipTests clean install'
             }
         }
         stage('Test') {
