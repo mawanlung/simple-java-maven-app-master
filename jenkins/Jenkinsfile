@@ -10,6 +10,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                echo 'begin docker ps'
+                sh 'docker ps'
+                echo 'end docker ps'
                 sh 'mvn -Dmaven.repo.local=/Users/macos/.m2/repository/ -DskipTests clean install'
             }
         }
